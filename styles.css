@@ -230,7 +230,7 @@ a {
 
 .intro-text {
   color: #858990;
-  margin: 0 0 48px;
+  margin: 0 0 20px;
   line-height: 2.05;
   font-size: 14px;
 }
@@ -1077,5 +1077,97 @@ body.popup-open {
 
   .gallery-intro h1 {
     font-size: 21vw;
+  }
+}
+
+
+/* Landing-page social links */
+.landing-socials {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 9px 18px;
+  margin-bottom: 20px;
+}
+
+.landing-socials-label {
+  color: #777;
+  font-size: 8px;
+  letter-spacing: .22em;
+}
+
+.landing-socials a {
+  color: #b9b0a2;
+  font-size: 15px;
+  letter-spacing: .12em;
+  text-decoration: none;
+  transition: color .25s ease;
+}
+
+.landing-socials a:hover,
+.landing-socials a:focus-visible {
+  color: var(--gold-bright);
+}
+
+.landing-socials strong {
+  color: #e8d8bd;
+  font-weight: 600;
+}
+
+/* Full gallery: one large, perfectly centered artwork at a time on phones */
+@media (max-width: 560px) {
+  .gallery-carousel {
+    width: 100vw;
+    margin-left: calc(50% - 50vw);
+  }
+
+  .gallery-viewport {
+    width: 100%;
+  }
+
+  .gallery-track {
+    --carousel-gap: 16px;
+    --carousel-slide-width: calc(100vw - 40px);
+    align-items: center;
+  }
+
+  .gallery-image {
+    flex: 0 0 var(--carousel-slide-width);
+    width: var(--carousel-slide-width);
+    aspect-ratio: 4 / 5;
+  }
+
+  .gallery-arrow {
+    width: 46px;
+    height: 46px;
+  }
+
+  .gallery-arrow-prev {
+    left: 8px;
+  }
+
+  .gallery-arrow-next {
+    right: 8px;
+  }
+
+  .landing-socials {
+    width: min(100%, 340px);
+    max-width: 340px;
+    margin: 6px auto 20px;
+    gap: 10px 14px;
+    justify-content: center;
+    text-align: center;
+  }
+
+  .landing-socials-label {
+    flex-basis: 100%;
+    text-align: center;
+  }
+
+  .landing-socials a {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
   }
 }

@@ -296,23 +296,22 @@
 
       let activeIndex = Math.min(1, slides.length - 1);
 
-      const getGap = () => {
-        const styles = getComputedStyle(track);
-        return parseFloat(styles.columnGap || styles.gap || '0') || 0;
-      };
-
       const update = (animate = true) => {
-        const slideWidth = slides[0].getBoundingClientRect().width;
-        const gap = getGap();
-        const step = slideWidth + gap;
+        const activeSlide = slides[activeIndex];
+        if (!activeSlide) return;
 
-        const edgePadding = viewport.clientWidth / 2 - slideWidth / 2;
-        const offset = -activeIndex * step;
+        // Use the slide's layout geometry, not getBoundingClientRect().width.
+        // getBoundingClientRect() includes the CSS scale used for inactive slides,
+        // so using it made the step slightly smaller after every click and caused
+        // the carousel to drift farther off-center as the user moved through it.
+        // offsetLeft/offsetWidth stay based on the unscaled flex layout.
+        const slideCenter = activeSlide.offsetLeft + activeSlide.offsetWidth / 2;
+        const offset = viewport.clientWidth / 2 - slideCenter;
 
         track.classList.toggle('no-transition', !animate);
         track.style.setProperty('--carousel-offset', `${offset}px`);
-        track.style.paddingLeft = `${edgePadding}px`;
-        track.style.paddingRight = `${edgePadding}px`;
+        track.style.paddingLeft = '0px';
+        track.style.paddingRight = '0px';
 
         slides.forEach((slide, index) => {
           const active = index === activeIndex;
