@@ -1,0 +1,72 @@
+<section class="contact section" id="contact">
+  <div class="heading">
+    <span class="number">04</span>
+    <h2>Contact</h2>
+  </div>
+
+  <div class="contact-area">
+    <div class="contact-text">
+      <p class="lead">
+        Commission slots are open. Contact me directly on Discord @javorina or fill out this form to send your request.
+        I always try to respond within 48 hours.
+      </p>
+
+      <div class="contact-info">
+        <a href="https://discord.com/users/javorina" target="_blank" rel="noreferrer">
+          <span>Discord</span>
+          @javorina
+        </a>
+        <a href="https://bsky.app/profile/did:plc:wvolor6hg4yvqwmpcdiigkxn" target="_blank" rel="noreferrer">
+          <span>Bsky</span>
+          @javorinansfw.bsky.social
+        </a>
+        <a href="https://cara.app/javorina" target="_blank" rel="noreferrer">
+          <span>Cara</span>
+          @javorina
+        </a>
+      </div>
+    </div>
+
+    <form class="contact-form" id="commission-form">
+      <div class="input-row">
+        <label>
+          Your Discord Username
+          <input
+            type="text"
+            id="discord-username"
+            name="discordUsername"
+            placeholder="Your Discord username"
+            autocomplete="off"
+            required
+          >
+        </label>
+
+        <label>
+          Type
+          <input
+            type="text"
+            id="commission-type"
+            name="type"
+            placeholder="e.g. Traditional ink — halfbody"
+            required
+          >
+        </label>
+      </div>
+
+      <label>
+        Commission Description
+        <textarea
+          name="description"
+          placeholder="Describe your commission — character, mood, references, anything useful..."
+          required
+        ></textarea>
+      </label>
+
+      <button class="send-button" type="submit">
+        SEND COMMISSION REQUEST
+      </button>
+
+      <p class="form-message" id="form-message" role="status" aria-live="polite"></p>
+    </form>
+  </div>
+</section>
