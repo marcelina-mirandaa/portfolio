@@ -1087,7 +1087,7 @@ body.popup-open {
   align-items: center;
   justify-content: center;
   flex-wrap: wrap;
-  gap: 9px 18px;
+  gap: 10px 16px;
   margin-bottom: 20px;
 }
 
@@ -1095,24 +1095,30 @@ body.popup-open {
   color: #777;
   font-size: 8px;
   letter-spacing: .22em;
+  margin-right: 4px;
 }
 
 .landing-socials a {
-  color: #b9b0a2;
-  font-size: 15px;
-  letter-spacing: .12em;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 28px;
+  height: 28px;
   text-decoration: none;
-  transition: color .25s ease;
+  transition: transform .25s ease, opacity .25s ease;
 }
 
 .landing-socials a:hover,
 .landing-socials a:focus-visible {
-  color: var(--gold-bright);
+  transform: translateY(-2px);
+  opacity: .75;
 }
 
-.landing-socials strong {
-  color: #e8d8bd;
-  font-weight: 600;
+.landing-socials img {
+  display: block;
+  width: 24px;
+  height: 24px;
+  object-fit: contain;
 }
 
 /* Full gallery: one large, perfectly centered artwork at a time on phones */
@@ -1169,5 +1175,10 @@ body.popup-open {
     display: inline-flex;
     justify-content: center;
     align-items: center;
+  }
+
+  .landing-socials img {
+    width: 24px;
+    height: 24px;
   }
 }
